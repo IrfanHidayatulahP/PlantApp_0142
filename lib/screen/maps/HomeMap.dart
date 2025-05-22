@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:plant_app/bloc/camera_bloc.dart';
+import 'package:plant_app/camera/CameraHome.dart';
 import 'package:plant_app/screen/maps/MapPage.dart';
 
 class HomeMap extends StatefulWidget {
@@ -43,6 +46,25 @@ class _HomeMapState extends State<HomeMap> {
               alamatDipilih == null
                   ? const Text('Tidak Ada Alamat Yang Dipilih')
                   : Text(alamatDipilih!),
+
+              const SizedBox(height: 24),
+              ElevatedButton.icon(
+                onPressed: alamatDipilih != null
+                    ? () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BlocProvider(
+                              create: (context) => CameraBloc(),
+                              child: Camerahome(alamat: alamatDipilih!),
+                            )
+                          )
+                        );
+                      }
+                    : null,
+                icon: const Icon(Icons.send),
+                label: const Text('Kirim ke Camerahome'),
+              ),
             ],
           ),
         )
