@@ -8,8 +8,11 @@ import 'package:plant_app/screen/maps/HomeMap.dart';
 
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar({
-    super.key,
+    super.key, 
+    required this.alamat,
   });
+
+  final String alamat;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +59,7 @@ class MyBottomNavBar extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => BlocProvider(
                     create: (context) => CameraBloc(),
-                    child: const Camerahome(),
+                    child: Camerahome(alamat: alamat),
                   )
                 )
               );
