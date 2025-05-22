@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:plant_app/bloc/camera_bloc.dart';
+import 'package:plant_app/camera/CameraHome.dart';
 import 'package:plant_app/constants.dart';
 
 class MyBottomNavBar extends StatelessWidget {
@@ -39,7 +42,17 @@ class MyBottomNavBar extends StatelessWidget {
           ),
           IconButton(
             icon: SvgPicture.asset("assets/icons/user.svg"),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BlocProvider(
+                    create: (context) => CameraBloc(),
+                    child: const Camerahome(),
+                  )
+                )
+              );
+            },
           ),
         ],
       ),
