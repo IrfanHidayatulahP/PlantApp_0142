@@ -45,7 +45,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 24,
       child: Stack(
         children: <Widget> [

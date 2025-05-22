@@ -89,7 +89,7 @@ class RecomPlantCard extends StatelessWidget {
                           style: Theme.of(context).textTheme.labelLarge,
                         ),
                         TextSpan(
-                          text: "$country".toUpperCase(),
+                          text: country.toUpperCase(),
                           style: TextStyle(
                             color: kPrimaryColor.withOpacity(0.5),
                           ),
