@@ -44,18 +44,26 @@ class Body extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: kPrimaryColor, // Change as needed
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20),
+                child: SizedBox(
+                  width: size.width / 2,
+                  height: 84,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: kPrimaryColor, // Change as needed
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(20),
+                        ),
+                      ),
+                    ), 
+                    child: Text(
+                      "Description",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
                       ),
                     ),
-                  ), 
-                  child: Text(
-                    "Description"
                   ),
                 ),
               )
