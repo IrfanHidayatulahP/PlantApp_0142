@@ -4,14 +4,19 @@ import 'package:plant_app/screen/home/components/body.dart';
 import 'package:plant_app/screen/home/components/mybottom_navbar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({
+    super.key, 
+    required this.alamat
+  });
+
+  final String alamat;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(),
-      bottomNavigationBar: MyBottomNavBar(),
+      bottomNavigationBar: MyBottomNavBar(alamat: alamat),
     );
   }
 
