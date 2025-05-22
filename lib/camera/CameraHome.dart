@@ -4,7 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:plant_app/bloc/camera_bloc.dart';
 
 class Camerahome extends StatelessWidget {
-  const Camerahome({super.key});
+  const Camerahome({
+    super.key, 
+    required this.alamat
+  });
+
+  final String alamat;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +50,11 @@ class Camerahome extends StatelessWidget {
                     const Text(
                       'Gamer',
                       style: TextStyle(color: Colors.grey),
+                    ),
+                    Text(
+                      'Alamat: $alamat',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
                     ),
                   ],
 
