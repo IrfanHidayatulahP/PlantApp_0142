@@ -1,13 +1,11 @@
 import 'dart:io';
-import 'dart:ui';
-
-import 'package:bloc/bloc.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:meta/meta.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:plant_app/camera/CameraPage.dart';
+import 'package:plant_app/storage/storage.dart';
 
 part 'camera_event.dart';
 part 'camera_state.dart';
@@ -116,7 +114,7 @@ class CameraBloc extends Bloc<CameraEvent, CameraState> {
       MaterialPageRoute(
         builder: (_) => BlocProvider.value(
           value: this,
-          child: const CameraPage(),
+          child: const Camerapage(),
         ),
       ),
     );
