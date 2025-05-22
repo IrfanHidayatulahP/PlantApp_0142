@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:plant_app/bloc/camera_bloc.dart';
 import 'package:plant_app/camera/CameraHome.dart';
 import 'package:plant_app/constants.dart';
+import 'package:plant_app/screen/maps/HomeMap.dart';
 
 class MyBottomNavBar extends StatelessWidget {
   const MyBottomNavBar({
@@ -37,8 +38,15 @@ class MyBottomNavBar extends StatelessWidget {
             onPressed: () {},
           ),
           IconButton(
-            icon: SvgPicture.asset("assets/icons/heart.svg"),
-            onPressed: () {},
+            icon: SvgPicture.asset("assets/icons/google-maps.svg"),
+            onPressed: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => const HomeMap()
+                )
+              );
+            },
           ),
           IconButton(
             icon: SvgPicture.asset("assets/icons/user.svg"),
